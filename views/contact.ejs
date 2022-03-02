@@ -1,0 +1,50 @@
+<!--Author: Kanishka Dhir
+//Student ID:301220757
+//Date:02-02-2022 -->
+<% include partials/header.ejs %>
+
+<div class="container  col-xxl-8" >
+    <div class="row   py-5">
+      <!-- Displaying contact info-->
+      <div class="col-lg-7  " style="background: radial-gradient(circle,#79a7d3,white);">
+        <h1 class="fw-bold mb-3">Contact Me</h1>
+        <ul class=" mb-3 py-3">
+            <li class="nav-item">Send me an email at kdhir3@my.centennialcollege.com</li>
+            <li class="nav-item"><a href="https://www.linkedin.com/in/kanishka-dhir" class="nav-link ">LinkedIn</a></li>
+            <li class="nav-item"><a href="https://www.instagram.com/kanishka_dhir/" class="nav-link" >Instagram</a></li>
+            <li class="nav-item"><a href="https://www.facebook.com/dhirkanishka/" class="nav-link" >Facebook</a></li>
+            <li class="nav-item"><a href="https://github.com/KanishkaDhir" class="nav-link" >Github</a></li>
+        </ul>       
+      </div>
+      <!-- Form to connect-->
+      <div class="col-md-10  col-lg-5">
+        <form class="p-4  border rounded-3" style="background-color: whitesmoke;" action="/">
+          <div class="form-floating mb-3">
+            <input type="text" class="form-control" id="Fname" placeholder="First Name">
+            <label for="Fname">First Name</label>
+          </div>
+          <div class="form-floating mb-3">
+            <input type="text" class="form-control" id="Lname" placeholder="Last Name">
+            <label for="Lname">Last Name</label>
+          </div>
+          <div class="form-floating mb-3">
+            <input type="text" class="form-control" id="ContactNo" placeholder="Contact No">
+            <label for="ContactNo">Contact No</label>
+          </div>
+          <div class="form-floating mb-3">
+            <input type="email" class="form-control" id="Emailid" placeholder="Email ID">
+            <label for="Emailid">Email Address</label>
+          </div>
+          <div class="form-floating mb-3">
+            <textarea class="form-control" id="message" placeholder="Write something.." style="height:100px; width:350px;"></textarea>
+            <label for="message">Message</label>
+          </div>
+          <button class="btn btn-lg " style="width: 100%; background-color: #6883bc" type="submit"  >Submit</button>
+          </form>
+      </div>
+
+    </div>
+  </div>
+
+
+<% include partials/footer.ejs %>

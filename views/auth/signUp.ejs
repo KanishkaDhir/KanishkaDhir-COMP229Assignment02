@@ -1,0 +1,47 @@
+<%- include ../partials/header.ejs%>
+
+<!--Content for SignUp page-->
+
+<div class="container">
+   <div class="row">
+        <div class="offset-md-3 col-md-6">
+            <h1><%= title%></h1>
+            
+           <% for(var i in messages){ %>
+                <div class="flash"><%= messages[i] %></div>
+            <% } %>
+
+            <form class="form" action="/users/signup" method="POST" validate>
+                <div class="form-group">
+                    <label >First Name</label>
+                    <input type="text" class="form-control"  name="firstName" value="<%= user.firstName%>"/>
+                </div>
+                <div class="form-group">
+                    <label >Last Name</label>
+                    <input type="text" class="form-control"  name="lastName" value="<%= user.lastName%>"/>
+                </div>
+                <div class="form-group">
+                    <label >Email</label>
+                    <input type="text" class="form-control"  name="email" value="<%= user.email%>"/>
+                </div>
+                <div class="form-group">
+                    <label >UserName</label>
+                    <input type="text" class="form-control"  name="userName" value="<%= user.username%>"/>
+                </div>
+                <div class="form-group">
+                    <label >Password</label>
+                    <input type="password" class="form-control"  name="password" value="<%= user.password%>"/>
+                </div>
+                <div class="form-group">
+                    <label >Confirm Password</label>
+                    <input type="password" class="form-control"  name="confirm-password" />
+                </div>
+                <br>
+                <div>
+                    <input class="btn btn-primary" type="submit" value="SignUp"/>
+                </div>
+            </form>
+        </div>
+    </div>    
+</div>
+<% include ../partials/footer.ejs %>
