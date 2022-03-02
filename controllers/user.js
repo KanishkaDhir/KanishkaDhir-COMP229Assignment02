@@ -37,7 +37,7 @@ function getErrorMessage(err){
 };
 
 module.exports.renderSignUp = function(req,res,next){
-    if(!req.user){
+    if(!req.User){
 
         //creates a new user object
         let newUser=User();
@@ -53,7 +53,7 @@ module.exports.renderSignUp = function(req,res,next){
 };
 
 module.exports.signup=function(req,res,next){
-    if(!req.user){
+    if(!req.User){
         console.log(req.body);
 
         let user=new User(req.body);
@@ -62,7 +62,7 @@ module.exports.signup=function(req,res,next){
 
         user.save((err)=>{
             if(err){
-                let message=getErrorMessage(err)
+                let message=getErrorMessage(err);
                 req.flash('error',message);
                 return res.render('auth/signUp',{
                     title:'SignUp Form',
@@ -80,3 +80,29 @@ module.exports.signup=function(req,res,next){
         return res.render('/');
     }
 };
+
+module.exports.renderSignin = function(req, res, next) {
+    if (!req.user) {
+      res.render('auth/signin', {
+        title: 'Sign-in Form',
+        messages: req.flash('error') || req.flash('info')
+      });
+    } else {
+      console.log(req.user);
+      return res.redirect('/');
+    }
+  };
+
+  module.exports.signin = function(req, res, next){
+    passport.authenticate('local', {   
+      successRedirect: req.session.url || '/',
+      failureRedirect: '/users/signin',
+      failureFlash: true
+    })(req, res, next);
+    delete req.session.url;
+  } 
+
+  module.exports.signout = function(req, res, next) {
+    req.logout();
+    res.redirect('/');
+  };

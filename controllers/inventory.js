@@ -13,7 +13,8 @@ exports.list =  function(req,res,next){
              'inventory/list', 
             { 
                title: 'Inventory List' ,
-               InventoryList: inventoryList
+               InventoryList: inventoryList,
+               userName: req.user ? req.user.username : ''
             }
           );
     }
@@ -29,7 +30,8 @@ module.exports.displayAddPage = (req,res,next)=>{
   res.render('inventory/add_edit',
   {
        title:'Add a new item',
-       item: newItem     //in template add_edit.js we will use item to reference to newitem
+       item: newItem ,
+       userName: req.user ? req.user.username : ''    //in template add_edit.js we will use item to reference to newitem
   })
 }
 
@@ -80,7 +82,8 @@ module.exports.displayEditPage = (req,res,next)=>{
         {
              //show edit item
              title:'Edit Item',
-             item: itemToEdit  
+             item: itemToEdit ,
+             userName: req.user ? req.user.username : '' 
         })       //in template add_edit.js we will use item to reference to itemToEdit
      }
   });
