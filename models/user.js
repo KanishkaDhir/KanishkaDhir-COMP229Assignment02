@@ -13,7 +13,7 @@ let UserSchema = mongoose.Schema(
         username: {
             type: String,
             unique: true,//username should be unique, shouldn't match with anyothers
-            required: 'Username is required',
+            required: 'username is required',
             trim: true
         },
         password: {

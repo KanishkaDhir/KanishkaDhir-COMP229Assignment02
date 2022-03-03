@@ -14,7 +14,7 @@ router.post('/signup',userController.signup);
 
 //Singin
 router.get('/signin',userController.renderSignin);
-router.get('/signin',userController.signin);
+router.post('/signin',userController.signin);
 
 // Sign out
 router.get('/signout', userController.signout);

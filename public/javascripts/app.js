@@ -1,6 +1,6 @@
 console.log('Goes to the client side')
 
-if(getTitle == "Inventory List")
+if(getTitle == "Inventory List" || getTitle == "BusinessList")
 {
     let deleteButtons=document.querySelectorAll('.btn-danger');
 
@@ -18,7 +18,7 @@ if(getTitle == "Inventory List")
 }
 
 
-if(getTitle == "SignUp Form")
+if(getTitle == "Sign-Up Form")
 {
     const confirm=document.querySelector('input[name=confirm-password]');
     confirm.addEventListener('change',onChange);

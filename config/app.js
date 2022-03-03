@@ -15,6 +15,7 @@ let passport=require('passport');
 let indexRouter = require('../routes/index');
 let userRouter=require('../routes/users');
 let inventoryRouter=require('../routes/inventory');
+let businessRouter=require('../routes/business');
 
 let app = express();
 
@@ -37,9 +38,12 @@ app.use(express.static(path.join(__dirname, '../node_modules')));
 
 //after we setup the ejs above we use the routers
 app.use(flash());
+app.use(passport.initialize());
+app.use(passport.session());
 app.use('/', indexRouter);
 app.use('/inventory', inventoryRouter);
 app.use('/users',userRouter);
+app.use('/business',businessRouter)
 
 
 //after we setup routers , we configure two event listeners to catch errors

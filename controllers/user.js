@@ -23,7 +23,7 @@ function getErrorMessage(err){
         switch(err.code){
            case 11000:
            case 11001:
-               message="Uername already exists";
+               message="Username already exists";
                break;
             default:
                 message="Something went wrong";
@@ -42,7 +42,7 @@ module.exports.renderSignUp = function(req,res,next){
         //creates a new user object
         let newUser=User();
          res.render('auth/signUp',{
-             title:'SignUp Form',
+             title:'Sign-Up Form',
              messages: req.flash('error'),
              user:newUser
          });
@@ -65,7 +65,7 @@ module.exports.signup=function(req,res,next){
                 let message=getErrorMessage(err);
                 req.flash('error',message);
                 return res.render('auth/signUp',{
-                    title:'SignUp Form',
+                    title:'Sign-Up Form',
                     messages: req.flash('error'),
                     user:user
             });
@@ -77,14 +77,14 @@ module.exports.signup=function(req,res,next){
       });
     }
     else{
-        return res.render('/');
+        return res.render('auth/signin');
     }
 };
 
 module.exports.renderSignin = function(req, res, next) {
     if (!req.user) {
       res.render('auth/signin', {
-        title: 'Sign-in Form',
+        title: 'Sign-In Form',
         messages: req.flash('error') || req.flash('info')
       });
     } else {
@@ -95,7 +95,7 @@ module.exports.renderSignin = function(req, res, next) {
 
   module.exports.signin = function(req, res, next){
     passport.authenticate('local', {   
-      successRedirect: req.session.url || '/',
+      successRedirect: req.session.url||'/',
       failureRedirect: '/users/signin',
       failureFlash: true
     })(req, res, next);
