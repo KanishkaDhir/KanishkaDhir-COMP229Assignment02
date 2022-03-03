@@ -1,6 +1,6 @@
 console.log('Goes to the client side')
 
-if(getTitle == "Inventory List" || getTitle == "BusinessList")
+if(getTitle == "BusinessList")
 {
     let deleteButtons=document.querySelectorAll('.btn-danger');
 

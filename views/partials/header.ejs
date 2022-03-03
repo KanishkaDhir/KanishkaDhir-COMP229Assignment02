@@ -23,7 +23,7 @@
         </a>
       
       <!-- Links-->
-      <ul class="navbar-nav">
+      <ul class="navbar-nav me-auto">
         <li class="nav-item">
           <% if (title == "Home") { %>
              <a class="nav-link active" href="/">
@@ -64,18 +64,7 @@
             </a>    
             </a>
         </li>
-        <li class="nav-item dropdown">
-          <% if (title =="InventoryList" || title=="Add a new item"){ %>
-            <a class="nav-link active dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Inventory</a>
-          <% } else {%>
-            <a class="nav-link  dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Inventory</a>
-          <% } %>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="/inventory/list">Inventory List</a></li>
-            <li><a class="dropdown-item" href="/inventory/add">Add a new item</a></li>
-          </ul>
-
-        </li>
+        
         <li class="nav-item dropdown">
           <% if (title =="BusinessList" || title=="Add a new Contact"){ %>
             <a class="nav-link active dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Business</a>
@@ -98,6 +87,9 @@
             </a>    
             </a>
         </li>
+        </ul>
+
+        <ul class="navbar-nav">
         <li class="nav-item">  
           <% if (typeof username == 'string' && username) { %>
             <a class="nav-link" href="/users/signout" onclick="return confirm('Are you sure?')">Sign Out (<%= username %>)</a>
