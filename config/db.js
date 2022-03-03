@@ -1,6 +1,6 @@
-//give db connection string with db name at last of string
-//protocol://username:password@clusterAddress/databaseName
-//Do not use this in produciton. Dont expose password, and dont show connection string
+//Author: Kanishka Dhir
+//Student ID:301220757
+//Date:03-03-2022 
   let DB_CONNECTION="mongodb+srv://dbadmin:8CG52A4AYcArb30G@cluster001.88l1i.mongodb.net/Comp229-Week04";
 
 

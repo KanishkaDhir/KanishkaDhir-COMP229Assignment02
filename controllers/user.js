@@ -1,3 +1,7 @@
+//Author: Kanishka Dhir
+//Student ID:301220757
+//Date:03-03-2022 
+
 let User=require('../models/user');
 let passport=require('passport');
 

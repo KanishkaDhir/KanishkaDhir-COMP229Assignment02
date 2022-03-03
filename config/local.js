@@ -1,3 +1,6 @@
+//Author: Kanishka Dhir
+//Student ID:301220757
+//Date:03-03-2022 
 const passport= require('passport');
 const LocalStrategy=require('passport-local').Strategy;
 const User=require('../models/user');
